@@ -4,10 +4,10 @@ WORKDIR /home/ilovedocker/app
 
 COPY ./packages/package*.json ./
 
-RUN npm install
+RUN npm install --omit=dev
 
 COPY ./src/ ./
 
 EXPOSE 3032
 
-CMD node main.js
+CMD ["node", "main.js"]
